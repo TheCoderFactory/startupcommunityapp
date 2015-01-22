@@ -1,0 +1,17 @@
+<nav class="navbar navbar-default" role="navigation">
+	<div class="container">
+    <%= link_to "The Startup Community", root_path, :class => 'navbar-brand' %>
+    <ul class="nav navbar-nav navbar-right">
+    	<li><%= link_to 'Business directory', businesses_path %></li>
+    	<% if user_signed_in? %>
+    		<li><%= link_to 'Create your business profile', new_business_path %></li>
+    		<% if current_user.user_profile %>
+    			<li><%= link_to 'My profile', user_profile_path(current_user.user_profile) %></li>
+    		<% end %>
+    		<li><%= link_to 'Sign out', destroy_user_session_path, method: :delete %></li>
+    	<% else %>
+    		<li><%= link_to 'Sign in', new_user_session_path %></li>
+    	<% end %>
+    </ul>
+  </div>
+</nav>

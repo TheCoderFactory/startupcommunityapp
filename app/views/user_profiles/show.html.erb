@@ -1,0 +1,77 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <strong>Name:</strong>
+  <%= @user_profile.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user_profile.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @user_profile.phone %>
+</p>
+
+<p>
+  <strong>Tagline:</strong>
+  <%= @user_profile.tagline %>
+</p>
+
+<p>
+  <strong>About:</strong>
+  <%= @user_profile.about %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @user_profile.url %>
+</p>
+
+<p>
+  <strong>Blog:</strong>
+  <%= @user_profile.blog %>
+</p>
+
+<p>
+  <strong>Twitter:</strong>
+  <%= @user_profile.twitter %>
+</p>
+
+<p>
+  <strong>Facebook:</strong>
+  <%= @user_profile.facebook %>
+</p>
+
+<p>
+  <strong>Linkedin:</strong>
+  <%= @user_profile.linkedin %>
+</p>
+
+<p>
+  <strong>Google:</strong>
+  <%= @user_profile.google %>
+</p>
+
+<p>
+  <strong>Github:</strong>
+  <%= @user_profile.github %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @user_profile.image %>
+</p>
+
+<h2>Businesses:</h2>
+<% @user_profile.user.businesses.each do |business| %>
+  <span class="label label-info"><%= link_to business.name, business %></span>
+<% end %>
+
+<hr>
+
+<%= link_to 'Edit', edit_user_profile_path(@user_profile) %> |
+<%= link_to 'Back', user_profiles_path %>
