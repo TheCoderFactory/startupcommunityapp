@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
 
   def number_unread
-  	Message.where(receiver_id: current_user.id, read: nil).count
+  	Message.where(receiver_id: current_user.id, read: nil).count if current_user
   end
 
   helper_method :number_unread
