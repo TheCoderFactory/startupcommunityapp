@@ -1,0 +1,8 @@
+<div class="well post">
+      <p>
+        <strong><%= post.title %></strong>
+      </p>
+      <p><small>Posted on <%= post.created_at.strftime('%b %d, %Y at %I:%M %p') %></small></p>
+      <hr>
+      <p><%= post.content %></p>
+    </div>

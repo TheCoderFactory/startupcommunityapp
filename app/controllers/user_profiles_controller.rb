@@ -9,6 +9,8 @@ class UserProfilesController < ApplicationController
   end
 
   def show
+    @posts = @user_profile.user.posts.reverse_order
+    @post = Post.new
     respond_with(@user_profile)
   end
 

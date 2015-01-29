@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'inbox', to: 'inbox#index'
+
+  resources :messages
+
+  resources :posts
+
   resources :businesses do
     member do
       get :join, :leave

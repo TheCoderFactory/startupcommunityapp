@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @message.subject %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @message.body %>
+</p>
+
+<p>
+  <strong>Sender:</strong>
+  <%= @message.sender_id %>
+</p>
+
+<p>
+  <strong>Receiver:</strong>
+  <%= @message.receiver_id %>
+</p>
+
+<p>
+  <strong>Read:</strong>
+  <%= @message.read %>
+</p>
+
+<%= link_to 'Back to inbox', inbox_path %>

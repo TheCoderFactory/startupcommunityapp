@@ -1,0 +1,21 @@
+<%= simple_form_for(@message) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+
+     <div class="form-group select optional message_receiver_id"><label class="select optional control-label" for="message_receiver_id">Receiver</label><select class="select optional form-control" name="message[receiver_id]" id="message_receiver_id"><option value=""></option>
+     <% User.all.each do |user| %>
+      <% if user != current_user %>
+        <option value="<%= user.id %>"><%= user.user_profile.name %></option>
+      <% end %>
+    <% end %>
+
+    </select></div>
+    <%= f.input :subject %>
+    <%= f.input :body %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

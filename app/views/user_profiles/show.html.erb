@@ -72,6 +72,23 @@
 <% end %>
 
 <hr>
+<h2>My Posts (<span id="posts_count"><%= @user_profile.user.posts.count %></span>)</h2>
+<h3>New post:</h3>
+<%= simple_form_for @post, remote: true do |f| %>
+  <%= f.error_notification %>
+    <div class="form-group">
+      <%= f.input :title, input_html: { class: "form-control"} %>
+    </div>
+    <div class="form-group">
+      <%= f.input :content, label: 'Post', input_html: { class: "form-control"} %>
+    </div>
+    <%= f.button :submit %>
+<% end %>
+<hr>
+<h3>Previous posts:</h3>
+<%= render @posts %>
+
+
 
 <%= link_to 'Edit', edit_user_profile_path(@user_profile) %> |
 <%= link_to 'Back', user_profiles_path %>
