@@ -11,4 +11,8 @@ class Business < ActiveRecord::Base
   def full_address
   	[address, suburb, state, postcode].compact.join(', ')
   end
+
+  def self.newest
+  	order(created_at: :desc)
+  end
 end

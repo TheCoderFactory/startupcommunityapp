@@ -9,3 +9,19 @@
 <%= link_to 'Get started', new_user_profile_path, class: 'btn btn-primary' %>
 <% end %>
 <% end %>
+
+
+
+<h3>Latest businesses</h3>
+<ul>
+	<% @businesses.each do |business| %>
+		<li><%= business.name %></li>
+	<% end %>
+</ul>
+
+<h3>Newest members</h3>
+<ul>
+	<% @user_profiles.each do |user_profile| %>
+		<li><%= user_profile.name %></li>
+	<% end %>
+</ul>

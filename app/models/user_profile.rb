@@ -3,4 +3,8 @@ class UserProfile < ActiveRecord::Base
 
   extend FriendlyId
   friendly_id :name, use: :slugged
+
+  def self.newest
+  	order(created_at: :desc)
+  end
 end

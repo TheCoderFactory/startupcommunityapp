@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @discussion.user %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @discussion.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @discussion.content %>
+</p>
+
+<p>
+  <strong>Topic:</strong>
+  <%= @discussion.topic %>
+</p>
+
+<%= link_to 'Edit', edit_discussion_path(@discussion) %> |
+<%= link_to 'Back', discussions_path %>
+
+<h3>Add your comment</h3>
+<%= simple_form_for Comment.new do |f| %>
+	<%= f.input :title %>
+	<%= f.input :body %>
+	<%= f.submit %>
+<% end %>
+
+
+
+
+
+

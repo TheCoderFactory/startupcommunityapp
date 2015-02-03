@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @topic.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @topic.description %>
+</p>
+
+<%= link_to 'Edit', edit_topic_path(@topic) %> |
+<%= link_to 'Back', topics_path %>
+
+<h2>Discussions</h2>
+<%= link_to "Create discussion", new_discussion_path(topic_id: @topic.id), class: 'btn btn-primary' %>
+<table class="table">
+	<tr>
+		<th>Discussion</th>
+		<th>No. Comments</th>
+		<th>Latest update</th>
+	</tr>
+	<% @discussions.each do |discussion| %>
+		<tr>
+			<td><%= link_to discussion.title, discussion %></td>
+			<td><%= discussion.title %></td>
+			<td><%= discussion.title %></td>
+		</tr>
+	<% end %>
+</table>

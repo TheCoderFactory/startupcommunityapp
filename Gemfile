@@ -10,6 +10,7 @@ gem 'cancan'
 gem 'friendly_id', '~> 5.0.0'
 gem 'geocoder'
 gem 'gmaps4rails'
+gem 'acts_as_commentable_with_threading'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets

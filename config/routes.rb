@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :discussions
+
+  resources :topics
+
+  get 'discussion-forum', to: 'discussion_forum#index'
+
   get 'inbox', to: 'inbox#index'
 
   resources :messages

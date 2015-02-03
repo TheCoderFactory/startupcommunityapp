@@ -1,0 +1,14 @@
+<%= simple_form_for(@discussion) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    
+    <%= f.input :title %>
+    <%= f.input :content %>
+    <%= f.input :topic_id, as: :hidden, input_html: { value: params[:topic_id]} %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

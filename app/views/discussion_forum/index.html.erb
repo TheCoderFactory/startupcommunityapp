@@ -1,0 +1,19 @@
+<h1>Discussion Forum</h1>
+<p>Join our lively discussions.</p>
+
+<h2>Topics</h2>
+<%= link_to "Create topic", new_topic_path, class: 'btn btn-primary' %>
+<table class="table">
+	<tr>
+		<th>Topic</th>
+		<th>No. Discussions</th>
+		<th>Latest update</th>
+	</tr>
+	<% @topics.each do |topic| %>
+		<tr>
+			<td><%= link_to topic.name, topic %></td>
+			<td><%= topic.discussions.count %></td>
+			<td><%= topic.discussions.last.created_at.strftime('%d/%m/%y') if topic.discussions.any? %></td>
+		</tr>
+	<% end %>
+</table>
