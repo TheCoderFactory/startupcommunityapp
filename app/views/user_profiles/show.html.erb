@@ -1,5 +1,38 @@
 <p id="notice"><%= notice %></p>
 
+<div class="col-md-4">
+
+  <div class="stats">
+    <a href="<%= following_user_path(@user_profile.user) %>" class="btn btn-lg btn-warning">
+      <strong id="following" class="stat">
+      Following 
+        <span class="badge"><%= @user_profile.user.followed_users.count %></span> users
+      </strong>
+
+    </a>
+    </p>
+    <a href="<%= followers_user_path(@user_profile.user) %>" class="btn btn-lg btn-warning">
+      <strong class="stat">
+      Followed by
+        <span class="badge" id="followers"><%= @user_profile.user.followers.count %></span> users
+      </strong>
+
+    </a>
+  </div>
+<br>
+<div class="follow_unfollow">
+<% unless current_user == @user_profile.user %>
+  <div id="follow_form">
+  <% if current_user.following?(@user_profile.user) %>
+    <%= render 'unfollow' %>
+  <% else %>
+    <%= render 'follow' %>
+  <% end %>
+  </div>
+<% end %>
+</div>
+</div>
+
 
 <p>
   <strong>Name:</strong>

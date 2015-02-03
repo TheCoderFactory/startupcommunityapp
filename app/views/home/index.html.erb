@@ -22,6 +22,6 @@
 <h3>Newest members</h3>
 <ul>
 	<% @user_profiles.each do |user_profile| %>
-		<li><%= user_profile.name %></li>
+		<li><%= link_to user_profile.name, user_profile_path(user_profile) %></li>
 	<% end %>
 </ul>

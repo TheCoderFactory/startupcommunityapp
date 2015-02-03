@@ -12,7 +12,11 @@ gem 'geocoder'
 gem 'gmaps4rails'
 gem 'acts_as_commentable_with_threading'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', group: :development
+group :production do
+	gem 'pg'
+	gem 'rails_12factor'
+end
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
